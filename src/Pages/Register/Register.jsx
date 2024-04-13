@@ -1,18 +1,33 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 
-const Login = () => {
+const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
-        console.log(form.get('password'));
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name,photo,email,password);
     }
     return (
         <div className="bg-base-200">
             <Navbar></Navbar>
-            <h2 className="text-center text-2xl font-bold mt-5">Please Login</h2>
+            <h2 className="text-center text-2xl font-bold mt-5">Please Register</h2>
             <form onSubmit={handleSubmit} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Your Name</span>
+                    </label>
+                    <input type="name" name="name" placeholder="Name" className="input input-bordered" required />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Photo URL</span>
+                    </label>
+                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required />
+                </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
@@ -29,14 +44,14 @@ const Login = () => {
                     </label>
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Login</button>
+                    <button className="btn btn-primary">Register</button>
                 </div>
             </form>
             <div className="text-center">
-                <p>Do not have an account ? <Link to={"/register"} className="text-red-600">Register</Link></p>
+                <p>Already have an account ? <Link to={"/login"} className="text-red-600">Login</Link></p>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;
