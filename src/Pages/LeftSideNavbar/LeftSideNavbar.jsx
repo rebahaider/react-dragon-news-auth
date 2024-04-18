@@ -11,7 +11,7 @@ const LeftSideNavbar = () => {
     }, [])
 
     return (
-        <div className='border space-y-4'>
+        <div className='space-y-4'>
             <h2 className="font-bold">All Category</h2>
             {
                 categories.map(category =>

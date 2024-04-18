@@ -5,7 +5,7 @@ import qZone3 from '../../assets/qZone3.png'
 
 const RightSideNavbar = () => {
     return (
-        <div className="border p-4 space-y-8">
+        <div className="p-4 space-y-8">
             <div className="space-y-4">
                 <h2 className="text-2xl font-bold">Login With</h2>
                 <button className="btn btn-outline btn-info w-full">
